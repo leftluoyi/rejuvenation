@@ -14,6 +14,7 @@
       <div class="row justify-content-center">
         <div class="col-8">
           <h1 class="text-center">Medicare Profile Authorization</h1>
+          <h5 class="text-center" id="contract_address"></h5>
           <hr/>
           <br/>
         </div>
@@ -24,16 +25,56 @@
           <div class="row justify-content-center">
               <h2>Doctor</h2>
           </div>
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <span id="doctor_address"></span>
+            </div>
+          </div>
           <div style="height:10px"></div>
-
+          <hr>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Choose Patient</span>
+            </div>
+            <select id="patient" class="custom-select"></select>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-success" id="retrieve_doctor">Retrieve</span>
+            </div>
+          </div>
+          <span style="color:red" id="message_doctor"></span>
+          <div style="height:10px"></div>
+          <div id="profile_doctor"></div>
         </div>
 
         <div class='col-6'>
           <div class="row justify-content-center">
-              <h2>Patient</h2>
+            <h2>Patient</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <span id="patient_address"></span>
             </div>
+          </div>
           <div style="height:10px"></div>
-          
+          <hr>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Choose Doctor</span>
+            </div>
+            <select id="doctor" class="custom-select"></select>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-warning" id="retrieve_patient">Retrieve</span>
+            </div>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-success" id="authorize">Authorize</span>
+            </div>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-danger" id="unauthorize">Unuthorize</span>
+            </div>
+          </div>
+          <span style="color:green" id="message_patient"></span>
+          <div style="height:10px"></div>
+          <div id="profile_patient"></div>
         </div>
       </div>
     </div>
