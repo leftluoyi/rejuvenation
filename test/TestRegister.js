@@ -4,7 +4,7 @@ contract('Register', (accounts) =>  {
 	let register;
 
 	beforeEach('create new Register contract', async () => {
-		register = await Register.new({from: accounts[0]});
+		register = await Register.new({name: "myname", category: "Doctor", from: accounts[0]});
 	})
 
 	it("check initial number of register patients", async () => {
