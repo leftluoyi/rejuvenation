@@ -1,41 +1,43 @@
 pragma solidity ^0.4.23;
 
+import "./Record.sol";
+
 contract Register {
-	address public doctor;
-	mapping (address => bool) private authorizationList;
-	uint public numAuthorized;
+    enum Categories {Doctor, Patient, Research, General}
+    address public entity;
+    string public name;
+    Categories category;
+    
+    // define the confidence level
+    mapping (address => uint8) private recordList;
 
-	// modifier onlyOwner {
-	// 	require(
-	// 		msg.sender == organizer,
-	// 		"Only organizer can call this function."
-	// 	)
-	// }
+    event Authorize(address _patient, address _doctor, uint8 level);
 
-	event Authorize(address _patient, address _doctor);
-	event Unauthorize(address _patient, address _doctor);
+    constructor(string entityname, Categories mcategory) public {
+        entity = msg.sender;
+        name = entityname;
+        category = mcategory;
+    }
 
-	constructor() public {
-		doctor = msg.sender;
-		numAuthorized = 0;
-	}
+    // make sure it is doctor
+    function addRecord() public {
+        recordList[msg.sender] = 2;
+    }
 
-	function authorize() public returns (bool success) {
-		authorizationList[msg.sender] = true;
-		numAuthorized++;
-		emit Authorize(msg.sender, doctor);
-		return true;
-	}
+    // make sure it is from the owner
+    function authorize(uint8 level, address recordAddr) public returns (bool success) {
+        Record record;
+        record = Record(recordAddr);
+        if(record.owner() == msg.sender) {
+            recordList[msg.sender] = level;
+            emit Authorize(msg.sender, entity, level);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-	function unauthorize() public {
-		if(authorizationList[msg.sender]) {
-			authorizationList[msg.sender] = false;
-			numAuthorized--;
-			emit Unauthorize(msg.sender, doctor);
-		}
-	}
-
-	function queryAuthority(address patient) public constant returns (bool authorized) {
-		return authorizationList[patient];
-	}
+    function queryAuthority(address record) public view returns (uint8 authorizeType) {
+        return recordList[record];
+    }
 }
