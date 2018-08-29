@@ -25,9 +25,9 @@ contract('Authorization', (accounts) =>  {
 
 	it("test unauthorization", async () => {
 		authorization.unauthorize({from: accounts[1]}).then(async (result) => {
-				authorization.queryAuthority(accounts[1]).then(authorized => {
-					assert.equal(authorized, false, "should be unauthorized")
-				})			
-			})
+			authorization.queryAuthority(accounts[1]).then(authorized => {
+				assert.equal(authorized, false, "should be unauthorized")
+			})			
+		})
 	})
 })
