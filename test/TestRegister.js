@@ -1,33 +1,27 @@
-const Authorization = artifacts.require("Register")
+const Register = artifacts.require("Register")
+const Record = artifacts.require("Record")
 
 contract('Register', (accounts) =>  {
-	let register;
+    let patient;
+    let provider;
+    let record;
 
-	beforeEach('create new Register contract', async () => {
-		register = await Register.new({name: "myname", category: "Doctor", from: accounts[0]});
-	})
+	beforeEach('create new Register and Record contract', async () => {
+        provider = await Register.new("Dr Strange", 0, {from: accounts[0]});
+        patient = await Register.new("Lucy", 1, {from: accounts[1]});
+    })
 
-	it("check initial number of register patients", async () => {
-		register.numAuthorized().then((num) => {
-			assert.equal(num.toNumber(), 0, "Number of authorized patients should be 0");
+    it("test register initializer", async () => {
+        provider.entity().then(entity => {
+            assert.equal(entity, accounts[0], "Entity is wrong!");
+        })
+    })
+    
+    it("check record initializer", async () => {
+        record = await Record.new(provider.address, patient.address, "InterSystems");
+		record.owner().then(patient => {
+			assert.equal(patient, accounts[1], "Owner of the record is wrong!");
 		})
-	})
-
-	
-	it("test register authorize", async () => {
-		register.authorize({from: accounts[1]}).then(async (result) => {
-			register.queryAuthority(accounts[1]).then(authorized => {
-				assert.equal(authorized, true, "should be authorized")
-			})
-		})
-	})
-
-
-	it("test unauthorize", async () => {
-		register.unauthorize({from: accounts[1]}).then(async (result) => {
-			register.queryAuthority(accounts[1]).then(authorized => {
-				assert.equal(authorized, false, "should be unauthorized")
-			})			
-		})
-	})
+    })
+    
 })

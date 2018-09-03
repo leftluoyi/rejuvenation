@@ -12,7 +12,6 @@ contract('Authorization', (accounts) =>  {
 			assert.equal(num.toNumber(), 0, "Number of authorized patients should be 0");
 		})
 	})
-
 	
 	it("test authorization", async () => {
 		authorization.authorize({from: accounts[1]}).then(async (result) => {
@@ -21,7 +20,6 @@ contract('Authorization', (accounts) =>  {
 			})
 		})
 	})
-
 
 	it("test unauthorization", async () => {
 		authorization.unauthorize({from: accounts[1]}).then(async (result) => {

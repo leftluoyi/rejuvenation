@@ -1,17 +1,18 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.24;
 
 import "./Record.sol";
 
 contract Register {
     enum Categories {Doctor, Patient, Research, General}
     address public entity;
-    string public name;
-    Categories category;
+    string private name;
+    Categories private category;
     
     // define the confidence level
     mapping (address => uint8) private recordList;
 
-    event Authorize(address _patient, address _doctor, uint8 level);
+    event AddRecord(address sender);
+    event AuthorizeRecord(address _patient, address _doctor, uint8 level);
 
     constructor(string entityname, Categories mcategory) public {
         entity = msg.sender;
@@ -20,8 +21,13 @@ contract Register {
     }
 
     // make sure it is doctor
-    function addRecord() public {
+    function addRecord() public payable {
+        emit AddRecord(msg.sender);
         recordList[msg.sender] = 2;
+    }
+
+    function getName() public view returns (string) {
+        return name;
     }
 
     // make sure it is from the owner
@@ -30,7 +36,7 @@ contract Register {
         record = Record(recordAddr);
         if(record.owner() == msg.sender) {
             recordList[msg.sender] = level;
-            emit Authorize(msg.sender, entity, level);
+            emit AuthorizeRecord(msg.sender, entity, level);
             return true;
         } else {
             return false;
