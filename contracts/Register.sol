@@ -1,18 +1,16 @@
 pragma solidity ^0.4.24;
 
-import "./Record.sol";
+import "./Series.sol";
 
 contract Register {
-    enum Categories {Doctor, Patient, Research, General}
+    enum Categories {Doctor, Patient, Research, Drug, Insurance, Government, General}
+    
     address public entity;
     string private name;
     Categories private category;
-    
-    // define the confidence level
-    mapping (address => uint8) private recordList;
-
-    event AddRecord(address sender);
-    event AuthorizeRecord(address _patient, address _doctor, uint8 level);
+    mapping (address => bool) private authorizedSeries;
+    mapping (address => bool) private mySeries;
+    address private subscribedCT;
 
     constructor(string entityname, Categories mcategory) public {
         entity = msg.sender;
@@ -20,10 +18,14 @@ contract Register {
         category = mcategory;
     }
 
-    // make sure it is doctor
-    function addRecord() public payable {
-        emit AddRecord(msg.sender);
-        recordList[msg.sender] = 2;
+    // make sure it is validated
+    function addMySeries() public payable {
+        mySeries[msg.sender] = true;
+    }
+
+    // make sure it is validated
+    function addAuthorizedSeries() public payable {
+        mySeries[msg.sender] = true;
     }
 
     function getName() public view returns (string) {
@@ -31,19 +33,29 @@ contract Register {
     }
 
     // make sure it is from the owner
-    function authorize(uint8 level, address recordAddr) public returns (bool success) {
-        Record record;
-        record = Record(recordAddr);
-        if(record.owner() == msg.sender) {
-            recordList[msg.sender] = level;
-            emit AuthorizeRecord(msg.sender, entity, level);
+    function authorize(address seriesAddr) public returns (bool) {
+        Series series;
+        series = Series(seriesAddr);
+        if(series.owner() == msg.sender) {
+            authorizedSeries[msg.sender] = true;
             return true;
         } else {
             return false;
         }
     }
 
-    function queryAuthority(address record) public view returns (uint8 authorizeType) {
-        return recordList[record];
+    function unauthorize(address seriesAddr) public returns (bool) {
+        Series series;
+        series = Series(seriesAddr);
+        if(series.owner() == msg.sender) {
+            delete authorizedSeries[msg.sender];
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function queryAuthority(address series) public view returns (bool) {
+        return authorizedSeries[series];
     }
 }

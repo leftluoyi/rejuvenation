@@ -1,10 +1,12 @@
 const Register = artifacts.require("Register")
+const Series = artifacts.require("Series")
 const Record = artifacts.require("Record")
 
 contract('Register', (accounts) =>  {
     let patient;
     let provider;
     let record;
+    let series;
 
 	beforeEach('create new Register and Record contract', async () => {
         provider = await Register.new("Dr Strange", 0, {from: accounts[0]});
@@ -18,8 +20,8 @@ contract('Register', (accounts) =>  {
     })
     
     it("check record initializer", async () => {
-        record = await Record.new(provider.address, patient.address, "InterSystems");
-		record.owner().then(patient => {
+        series = await Series.new(patient.address, "InterSystems");
+		series.owner().then(patient => {
 			assert.equal(patient, accounts[1], "Owner of the record is wrong!");
 		})
     })
