@@ -12,6 +12,7 @@ contract Series {
     constructor(address ownerAddr, string query) public {
         Register(ownerAddr).addMySeries();
         owner = ownerAddr;
+        provider = msg.sender;
         sql = query;
     }
 
