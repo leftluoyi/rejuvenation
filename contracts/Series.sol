@@ -1,13 +1,18 @@
 pragma solidity ^0.4.24;
 
 import './Register.sol';
-import './Record.sol';
 
 contract Series {
+    struct Record {
+        string featureName;
+        string featureValue;
+        uint256 datetime;
+    }
+    
     address public owner;
     address public provider;
-    address public record;
     string private sql;
+    Record[] public records;
 
     constructor(address ownerAddr, string query) public {
         Register(ownerAddr).addMySeries();
@@ -20,7 +25,8 @@ contract Series {
         return sql;
     }
 
-    function addRecord() public {
-        record = msg.sender;
+    function addRecord(string featureName, string featureValue, uint256 datetime) public {
+        Record memory record = Record(featureName, featureValue, datetime);
+        records.push(record);
     }
 }
