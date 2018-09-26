@@ -8,7 +8,7 @@ contract ClinicalTrialCategory {
         name = mname;
     }
     
-    function addTrial() {
+    function addTrial() public {
         trials[msg.sender] = true;
     }
 }

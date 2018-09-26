@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 import "./Series.sol";
 
 contract Register {
-    enum Categories {Doctor, Patient, Research, Drug, Insurance, Government, General}
+    enum Categories {Patient, Doctor, Research, Drug, Insurance, Government, General}
     
     address public entity;
     string private name;
