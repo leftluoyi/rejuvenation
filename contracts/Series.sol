@@ -7,6 +7,7 @@ contract Series {
         string featureName;
         string featureValue;
         uint256 datetime;
+        string sql;
     }
     
     address public owner;
@@ -25,8 +26,8 @@ contract Series {
         return sql;
     }
 
-    function addRecord(string featureName, string featureValue, uint256 datetime) public {
-        Record memory record = Record(featureName, featureValue, datetime);
+    function addRecord(string featureName, string featureValue, uint256 datetime, string msql) public {
+        Record memory record = Record(featureName, featureValue, datetime, msql);
         records.push(record);
     }
 }
