@@ -10,15 +10,17 @@ contract Series {
         string sql;
     }
     
+    string public name;
     address public owner;
     address public provider;
     string private sql;
     Record[] public records;
 
-    constructor(address ownerAddr, string query) public {
+    constructor(address ownerAddr, string mname, address mprovider, string query) public {
         Register(ownerAddr).addMySeries();
+        name = mname;
         owner = ownerAddr;
-        provider = msg.sender;
+        provider = mprovider;
         sql = query;
     }
 
