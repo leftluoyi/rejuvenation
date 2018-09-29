@@ -1,13 +1,52 @@
 import { Register, Series, accounts } from '../../../global';
 
+const getMySeriesList = async regaddress => {
+  const seriesList = [];
+  const register = Register.at(regaddress);
+  const seriesLength = (await register.getMySeriesCount()).toNumber();
+  for (let i = 0; i < seriesLength; i += 1) {
+    const address = await register.getMySeries(i);
+    const series = await Series.at(address);
+    const name = await series.name();
+    const recordCount = (await series.getRecordCount()).toNumber();
+    const tmpRecord = [];
+    for (let j = 0; j < recordCount; j += 1) {
+      tmpRecord.push({ sql: await series.getRecord(j) });
+    }
+    seriesList.push({ address, name, records: tmpRecord });
+  }
+  return seriesList;
+};
+
+const getAuthorizedSeriesList = async regaddress => {
+  const seriesList = [];
+  const register = Register.at(regaddress);
+  const seriesLength = (await register.getAuthorizedSeriesCount()).toNumber();
+  for (let i = 0; i < seriesLength; i += 1) {
+    const address = await register.getAuthorizedSeries(i);
+    const series = await Series.at(address);
+    const name = await series.name();
+    const recordCount = (await series.getRecordCount()).toNumber();
+    const tmpRecord = [];
+    for (let j = 0; j < recordCount; j += 1) {
+      tmpRecord.push({ sql: await series.getRecord(j) });
+    }
+    seriesList.push({ address, name, records: tmpRecord });
+  }
+  return seriesList;
+};
+
 export default {
   namespace: 'demo',
 
   state: {
     patient: undefined,
     patientName: undefined,
-    doctor: undefined,
     seriesList: [],
+    doctor: undefined,
+    docAuthorizedList: [],
+    externalDoctor: undefined,
+    externalDocAuthorizedList: [],
   },
 
   effects: {
@@ -23,6 +62,8 @@ export default {
         yield put({ type: 'setPatientName', payload: patientname });
       } else if (payload.category === 1) {
         yield put({ type: 'setDoctor', payload: entity });
+      } else if (payload.category === 1.1) {
+        yield put({ type: 'setExternalDoctor', payload: entity });
       }
     },
     *submitSeries({ payload }, { put, select }) {
@@ -32,28 +73,40 @@ export default {
         from: accounts[1],
         gas: 1000000,
       });
-      yield put({ type: 'updateSeriesList' });
+      yield put({ type: 'updateLists' });
     },
-    *updateSeriesList(_, { put, select }) {
-      const seriesList = [];
+    *submitExternalSeries({ payload }, { put, select }) {
       const patient = yield select(state => state.demo.patient);
-      const seriesLength = (yield patient.getMySeriesCount()).toNumber();
-      for (let i = 0; i < seriesLength; i += 1) {
-        const address = yield patient.getMySeries(i);
-        const series = yield Series.at(address);
-        const name = yield series.name();
-        const recordCount = (yield series.getRecordCount()).toNumber();
-        const tmpRecord = [];
-        for (let j = 0; j < recordCount; j += 1) {
-          tmpRecord.push({ sql: yield series.getRecord(j) });
-        }
-        seriesList.push({ address, name, records: tmpRecord });
-      }
-      yield put({ type: 'setSeriesList', payload: seriesList });
+      const doctor = yield select(state => state.demo.externalDoctor);
+      yield Series.new(patient.address, payload, doctor.address, '', {
+        from: accounts[1],
+        gas: 1000000,
+      });
+      yield put({ type: 'updateLists' });
     },
     *submitRecord({ payload }, { put }) {
       yield Series.at(payload.series).addRecord(payload.query, { from: accounts[1] });
+      yield put({ type: 'updateLists' });
+    },
+    *updateLists(_, { put }) {
       yield put({ type: 'updateSeriesList' });
+      yield put({ type: 'updateDocAuthorizedList' });
+      yield put({ type: 'updateExternalDocAuthorizedList' });
+    },
+    *updateSeriesList(_, { put, select }) {
+      const patient = yield select(state => state.demo.patient);
+      const seriesList = yield getMySeriesList(patient.address);
+      yield put({ type: 'setSeriesList', payload: seriesList });
+    },
+    *updateDocAuthorizedList(_, { put, select }) {
+      const doctor = yield select(state => state.demo.doctor);
+      const seriesList = yield getAuthorizedSeriesList(doctor.address);
+      yield put({ type: 'setDocAuthorizedList', payload: seriesList });
+    },
+    *updateExternalDocAuthorizedList(_, { put, select }) {
+      const doctor = yield select(state => state.demo.externalDoctor);
+      const seriesList = yield getAuthorizedSeriesList(doctor.address);
+      yield put({ type: 'setExternalDocAuthorizedList', payload: seriesList });
     },
   },
 
@@ -70,16 +123,34 @@ export default {
         patientName: payload,
       };
     },
+    setSeriesList(state, { payload }) {
+      return {
+        ...state,
+        seriesList: payload,
+      };
+    },
     setDoctor(state, { payload }) {
       return {
         ...state,
         doctor: payload,
       };
     },
-    setSeriesList(state, { payload }) {
+    setDocAuthorizedList(state, { payload }) {
       return {
         ...state,
-        seriesList: payload,
+        docAuthorizedList: payload,
+      };
+    },
+    setExternalDoctor(state, { payload }) {
+      return {
+        ...state,
+        externalDoctor: payload,
+      };
+    },
+    setExternalDocAuthorizedList(state, { payload }) {
+      return {
+        ...state,
+        externalDocAuthorizedList: payload,
       };
     },
   },

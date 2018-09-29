@@ -15,6 +15,7 @@ contract Series {
 
     constructor(address ownerAddr, string mname, address mprovider, string query) public {
         Register(ownerAddr).addMySeries();
+        Register(mprovider).addAuthorizedSeries();
         name = mname;
         owner = ownerAddr;
         provider = mprovider;

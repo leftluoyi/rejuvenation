@@ -11,14 +11,14 @@
     "absolutePath": "/D/Project/Blockchain/rejuvenation/contracts/StackLib.sol",
     "exportedSymbols": {
       "StackLib": [
-        340
+        367
       ]
     },
-    "id": 341,
+    "id": 368,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 240,
+        "id": 267,
         "literals": [
           "solidity",
           "^",
@@ -34,24 +34,24 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 340,
+        "id": 367,
         "linearizedBaseContracts": [
-          340
+          367
         ],
         "name": "StackLib",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 243,
+            "id": 270,
             "libraryName": {
               "contractScope": null,
-              "id": 241,
+              "id": 268,
               "name": "StackLib",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 340,
+              "referencedDeclaration": 367,
               "src": "56:8:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_StackLib_$340",
+                "typeIdentifier": "t_contract$_StackLib_$367",
                 "typeString": "library StackLib"
               }
             },
@@ -59,27 +59,27 @@
             "src": "50:25:2",
             "typeName": {
               "contractScope": null,
-              "id": 242,
+              "id": 269,
               "name": "Stack",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 247,
+              "referencedDeclaration": 274,
               "src": "69:5:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                 "typeString": "struct StackLib.Stack"
               }
             }
           },
           {
             "canonicalName": "StackLib.Stack",
-            "id": 247,
+            "id": 274,
             "members": [
               {
                 "constant": false,
-                "id": 246,
+                "id": 273,
                 "name": "_items",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 274,
                 "src": "101:16:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -89,7 +89,7 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 244,
+                    "id": 271,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "101:7:2",
@@ -98,7 +98,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 245,
+                  "id": 272,
                   "length": null,
                   "nodeType": "ArrayTypeName",
                   "src": "101:9:2",
@@ -113,13 +113,13 @@
             ],
             "name": "Stack",
             "nodeType": "StructDefinition",
-            "scope": 340,
+            "scope": 367,
             "src": "81:42:2",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 264,
+              "id": 291,
               "nodeType": "Block",
               "src": "211:38:2",
               "statements": [
@@ -129,11 +129,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 261,
+                        "id": 288,
                         "name": "element",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 251,
+                        "referencedDeclaration": 278,
                         "src": "235:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -152,32 +152,32 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 256,
+                          "id": 283,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 249,
+                          "referencedDeclaration": 276,
                           "src": "218:4:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                            "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                             "typeString": "struct StackLib.Stack storage pointer"
                           }
                         },
-                        "id": 259,
+                        "id": 286,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_items",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 246,
+                        "referencedDeclaration": 273,
                         "src": "218:11:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 260,
+                      "id": 287,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -191,7 +191,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 262,
+                    "id": 289,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -205,14 +205,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 263,
+                  "id": 290,
                   "nodeType": "ExpressionStatement",
                   "src": "218:25:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 265,
+            "id": 292,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -220,31 +220,31 @@
             "name": "pushElement",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 252,
+              "id": 279,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 249,
+                  "id": 276,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 265,
+                  "scope": 292,
                   "src": "150:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 248,
+                    "id": 275,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "150:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -253,10 +253,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 251,
+                  "id": 278,
                   "name": "element",
                   "nodeType": "VariableDeclaration",
-                  "scope": 265,
+                  "scope": 292,
                   "src": "170:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -265,7 +265,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 250,
+                    "id": 277,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "170:7:2",
@@ -282,15 +282,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 255,
+              "id": 282,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 254,
+                  "id": 281,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 265,
+                  "scope": 292,
                   "src": "205:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -299,7 +299,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 253,
+                    "id": 280,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "205:4:2",
@@ -314,7 +314,7 @@
               ],
               "src": "204:6:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "129:120:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -322,21 +322,21 @@
           },
           {
             "body": {
-              "id": 296,
+              "id": 323,
               "nodeType": "Block",
               "src": "322:137:2",
               "statements": [
                 {
                   "assignments": [
-                    273
+                    300
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 273,
+                      "id": 300,
                       "name": "element",
                       "nodeType": "VariableDeclaration",
-                      "scope": 297,
+                      "scope": 324,
                       "src": "329:15:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -345,7 +345,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 272,
+                        "id": 299,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "329:7:2",
@@ -358,7 +358,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 277,
+                  "id": 304,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
@@ -366,32 +366,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 274,
+                        "id": 301,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 267,
+                        "referencedDeclaration": 294,
                         "src": "347:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                          "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                           "typeString": "struct StackLib.Stack storage pointer"
                         }
                       },
-                      "id": 275,
+                      "id": 302,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "peek",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 327,
+                      "referencedDeclaration": 354,
                       "src": "347:9:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_address_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_address_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                         "typeString": "function (struct StackLib.Stack storage pointer) returns (address)"
                       }
                     },
-                    "id": 276,
+                    "id": 303,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -415,7 +415,7 @@
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
                     },
-                    "id": 282,
+                    "id": 309,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -427,32 +427,32 @@
                         "argumentTypes": [],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 278,
+                          "id": 305,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 267,
+                          "referencedDeclaration": 294,
                           "src": "371:4:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                            "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                             "typeString": "struct StackLib.Stack storage pointer"
                           }
                         },
-                        "id": 279,
+                        "id": 306,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "size",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 339,
+                        "referencedDeclaration": 366,
                         "src": "371:9:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                           "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                         }
                       },
-                      "id": 280,
+                      "id": 307,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -471,7 +471,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "30",
-                      "id": 281,
+                      "id": 308,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -493,13 +493,13 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 293,
+                  "id": 320,
                   "nodeType": "IfStatement",
                   "src": "367:63:2",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 291,
+                      "id": 318,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -514,39 +514,39 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 283,
+                            "id": 310,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 267,
+                            "referencedDeclaration": 294,
                             "src": "402:4:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                              "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                               "typeString": "struct StackLib.Stack storage pointer"
                             }
                           },
-                          "id": 284,
+                          "id": 311,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_items",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 246,
+                          "referencedDeclaration": 273,
                           "src": "402:11:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_address_$dyn_storage",
                             "typeString": "address[] storage ref"
                           }
                         },
-                        "id": 290,
+                        "id": 317,
                         "indexExpression": {
                           "argumentTypes": null,
                           "commonType": {
                             "typeIdentifier": "t_uint8",
                             "typeString": "uint8"
                           },
-                          "id": 289,
+                          "id": 316,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -558,32 +558,32 @@
                               "argumentTypes": [],
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 285,
+                                "id": 312,
                                 "name": "self",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 267,
+                                "referencedDeclaration": 294,
                                 "src": "414:4:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                                  "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                                   "typeString": "struct StackLib.Stack storage pointer"
                                 }
                               },
-                              "id": 286,
+                              "id": 313,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "size",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 339,
+                              "referencedDeclaration": 366,
                               "src": "414:9:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                                 "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                               }
                             },
-                            "id": 287,
+                            "id": 314,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -602,7 +602,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "31",
-                            "id": 288,
+                            "id": 315,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -639,7 +639,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 292,
+                    "id": 319,
                     "nodeType": "ExpressionStatement",
                     "src": "395:35:2"
                   }
@@ -647,26 +647,26 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 294,
+                    "id": 321,
                     "name": "element",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 273,
+                    "referencedDeclaration": 300,
                     "src": "446:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 271,
-                  "id": 295,
+                  "functionReturnParameters": 298,
+                  "id": 322,
                   "nodeType": "Return",
                   "src": "439:14:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 297,
+            "id": 324,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -674,31 +674,31 @@
             "name": "popElement",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 268,
+              "id": 295,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 267,
+                  "id": 294,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 297,
+                  "scope": 324,
                   "src": "275:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 266,
+                    "id": 293,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "275:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -710,15 +710,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 271,
+              "id": 298,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 270,
+                  "id": 297,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 297,
+                  "scope": 324,
                   "src": "313:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -727,7 +727,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 269,
+                    "id": 296,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "313:7:2",
@@ -742,7 +742,7 @@
               ],
               "src": "312:9:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "255:204:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -750,7 +750,7 @@
           },
           {
             "body": {
-              "id": 326,
+              "id": 353,
               "nodeType": "Block",
               "src": "526:120:2",
               "statements": [
@@ -759,10 +759,10 @@
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 305,
+                      "id": 332,
                       "name": "value",
                       "nodeType": "VariableDeclaration",
-                      "scope": 327,
+                      "scope": 354,
                       "src": "533:13:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -771,7 +771,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 304,
+                        "id": 331,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "533:7:2",
@@ -784,7 +784,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 306,
+                  "id": 333,
                   "initialValue": null,
                   "nodeType": "VariableDeclarationStatement",
                   "src": "533:13:2"
@@ -796,7 +796,7 @@
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
                     },
-                    "id": 311,
+                    "id": 338,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -808,32 +808,32 @@
                         "argumentTypes": [],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 307,
+                          "id": 334,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 299,
+                          "referencedDeclaration": 326,
                           "src": "559:4:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                            "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                             "typeString": "struct StackLib.Stack storage pointer"
                           }
                         },
-                        "id": 308,
+                        "id": 335,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "size",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 339,
+                        "referencedDeclaration": 366,
                         "src": "559:9:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                           "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                         }
                       },
-                      "id": 309,
+                      "id": 336,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -852,7 +852,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "30",
-                      "id": 310,
+                      "id": 337,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -874,24 +874,24 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 323,
+                  "id": 350,
                   "nodeType": "IfStatement",
                   "src": "555:64:2",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 321,
+                      "id": 348,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 312,
+                        "id": 339,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 305,
+                        "referencedDeclaration": 332,
                         "src": "583:5:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -906,39 +906,39 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 313,
+                            "id": 340,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 326,
                             "src": "591:4:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                              "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                               "typeString": "struct StackLib.Stack storage pointer"
                             }
                           },
-                          "id": 314,
+                          "id": 341,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_items",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 246,
+                          "referencedDeclaration": 273,
                           "src": "591:11:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_address_$dyn_storage",
                             "typeString": "address[] storage ref"
                           }
                         },
-                        "id": 320,
+                        "id": 347,
                         "indexExpression": {
                           "argumentTypes": null,
                           "commonType": {
                             "typeIdentifier": "t_uint8",
                             "typeString": "uint8"
                           },
-                          "id": 319,
+                          "id": 346,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -950,32 +950,32 @@
                               "argumentTypes": [],
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 315,
+                                "id": 342,
                                 "name": "self",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 299,
+                                "referencedDeclaration": 326,
                                 "src": "603:4:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                                  "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                                   "typeString": "struct StackLib.Stack storage pointer"
                                 }
                               },
-                              "id": 316,
+                              "id": 343,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "size",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 339,
+                              "referencedDeclaration": 366,
                               "src": "603:9:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                                 "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                               }
                             },
-                            "id": 317,
+                            "id": 344,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -994,7 +994,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "31",
-                            "id": 318,
+                            "id": 345,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1032,7 +1032,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 322,
+                    "id": 349,
                     "nodeType": "ExpressionStatement",
                     "src": "583:36:2"
                   }
@@ -1040,26 +1040,26 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 324,
+                    "id": 351,
                     "name": "value",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 305,
+                    "referencedDeclaration": 332,
                     "src": "635:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 303,
-                  "id": 325,
+                  "functionReturnParameters": 330,
+                  "id": 352,
                   "nodeType": "Return",
                   "src": "628:12:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 327,
+            "id": 354,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1067,31 +1067,31 @@
             "name": "peek",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 300,
+              "id": 327,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 299,
+                  "id": 326,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 327,
+                  "scope": 354,
                   "src": "479:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 298,
+                    "id": 325,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "479:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -1103,15 +1103,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 303,
+              "id": 330,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 302,
+                  "id": 329,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 327,
+                  "scope": 354,
                   "src": "517:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1120,7 +1120,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 301,
+                    "id": 328,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "517:7:2",
@@ -1135,7 +1135,7 @@
               ],
               "src": "516:9:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "465:181:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1143,7 +1143,7 @@
           },
           {
             "body": {
-              "id": 338,
+              "id": 365,
               "nodeType": "Block",
               "src": "711:31:2",
               "statements": [
@@ -1155,32 +1155,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 334,
+                        "id": 361,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 329,
+                        "referencedDeclaration": 356,
                         "src": "725:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                          "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                           "typeString": "struct StackLib.Stack storage pointer"
                         }
                       },
-                      "id": 335,
+                      "id": 362,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "size",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 339,
+                      "referencedDeclaration": 366,
                       "src": "725:9:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                         "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                       }
                     },
-                    "id": 336,
+                    "id": 363,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1194,15 +1194,15 @@
                       "typeString": "uint8"
                     }
                   },
-                  "functionReturnParameters": 333,
-                  "id": 337,
+                  "functionReturnParameters": 360,
+                  "id": 364,
                   "nodeType": "Return",
                   "src": "718:18:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 339,
+            "id": 366,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1210,31 +1210,31 @@
             "name": "size",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 330,
+              "id": 357,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 329,
+                  "id": 356,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 339,
+                  "scope": 366,
                   "src": "666:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 328,
+                    "id": 355,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "666:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -1246,15 +1246,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 333,
+              "id": 360,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 332,
+                  "id": 359,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 339,
+                  "scope": 366,
                   "src": "704:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1263,7 +1263,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 331,
+                    "id": 358,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "704:5:2",
@@ -1278,14 +1278,14 @@
               ],
               "src": "703:7:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "652:90:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 341,
+        "scope": 368,
         "src": "28:717:2"
       }
     ],
@@ -1295,14 +1295,14 @@
     "absolutePath": "/D/Project/Blockchain/rejuvenation/contracts/StackLib.sol",
     "exportedSymbols": {
       "StackLib": [
-        340
+        367
       ]
     },
-    "id": 341,
+    "id": 368,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 240,
+        "id": 267,
         "literals": [
           "solidity",
           "^",
@@ -1318,24 +1318,24 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 340,
+        "id": 367,
         "linearizedBaseContracts": [
-          340
+          367
         ],
         "name": "StackLib",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 243,
+            "id": 270,
             "libraryName": {
               "contractScope": null,
-              "id": 241,
+              "id": 268,
               "name": "StackLib",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 340,
+              "referencedDeclaration": 367,
               "src": "56:8:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_StackLib_$340",
+                "typeIdentifier": "t_contract$_StackLib_$367",
                 "typeString": "library StackLib"
               }
             },
@@ -1343,27 +1343,27 @@
             "src": "50:25:2",
             "typeName": {
               "contractScope": null,
-              "id": 242,
+              "id": 269,
               "name": "Stack",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 247,
+              "referencedDeclaration": 274,
               "src": "69:5:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                 "typeString": "struct StackLib.Stack"
               }
             }
           },
           {
             "canonicalName": "StackLib.Stack",
-            "id": 247,
+            "id": 274,
             "members": [
               {
                 "constant": false,
-                "id": 246,
+                "id": 273,
                 "name": "_items",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 274,
                 "src": "101:16:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1373,7 +1373,7 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 244,
+                    "id": 271,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "101:7:2",
@@ -1382,7 +1382,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 245,
+                  "id": 272,
                   "length": null,
                   "nodeType": "ArrayTypeName",
                   "src": "101:9:2",
@@ -1397,13 +1397,13 @@
             ],
             "name": "Stack",
             "nodeType": "StructDefinition",
-            "scope": 340,
+            "scope": 367,
             "src": "81:42:2",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 264,
+              "id": 291,
               "nodeType": "Block",
               "src": "211:38:2",
               "statements": [
@@ -1413,11 +1413,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 261,
+                        "id": 288,
                         "name": "element",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 251,
+                        "referencedDeclaration": 278,
                         "src": "235:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1436,32 +1436,32 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 256,
+                          "id": 283,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 249,
+                          "referencedDeclaration": 276,
                           "src": "218:4:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                            "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                             "typeString": "struct StackLib.Stack storage pointer"
                           }
                         },
-                        "id": 259,
+                        "id": 286,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_items",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 246,
+                        "referencedDeclaration": 273,
                         "src": "218:11:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 260,
+                      "id": 287,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1475,7 +1475,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 262,
+                    "id": 289,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1489,14 +1489,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 263,
+                  "id": 290,
                   "nodeType": "ExpressionStatement",
                   "src": "218:25:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 265,
+            "id": 292,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1504,31 +1504,31 @@
             "name": "pushElement",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 252,
+              "id": 279,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 249,
+                  "id": 276,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 265,
+                  "scope": 292,
                   "src": "150:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 248,
+                    "id": 275,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "150:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -1537,10 +1537,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 251,
+                  "id": 278,
                   "name": "element",
                   "nodeType": "VariableDeclaration",
-                  "scope": 265,
+                  "scope": 292,
                   "src": "170:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1549,7 +1549,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 250,
+                    "id": 277,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "170:7:2",
@@ -1566,15 +1566,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 255,
+              "id": 282,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 254,
+                  "id": 281,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 265,
+                  "scope": 292,
                   "src": "205:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1583,7 +1583,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 253,
+                    "id": 280,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "205:4:2",
@@ -1598,7 +1598,7 @@
               ],
               "src": "204:6:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "129:120:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1606,21 +1606,21 @@
           },
           {
             "body": {
-              "id": 296,
+              "id": 323,
               "nodeType": "Block",
               "src": "322:137:2",
               "statements": [
                 {
                   "assignments": [
-                    273
+                    300
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 273,
+                      "id": 300,
                       "name": "element",
                       "nodeType": "VariableDeclaration",
-                      "scope": 297,
+                      "scope": 324,
                       "src": "329:15:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1629,7 +1629,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 272,
+                        "id": 299,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "329:7:2",
@@ -1642,7 +1642,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 277,
+                  "id": 304,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
@@ -1650,32 +1650,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 274,
+                        "id": 301,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 267,
+                        "referencedDeclaration": 294,
                         "src": "347:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                          "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                           "typeString": "struct StackLib.Stack storage pointer"
                         }
                       },
-                      "id": 275,
+                      "id": 302,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "peek",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 327,
+                      "referencedDeclaration": 354,
                       "src": "347:9:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_address_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_address_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                         "typeString": "function (struct StackLib.Stack storage pointer) returns (address)"
                       }
                     },
-                    "id": 276,
+                    "id": 303,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1699,7 +1699,7 @@
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
                     },
-                    "id": 282,
+                    "id": 309,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1711,32 +1711,32 @@
                         "argumentTypes": [],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 278,
+                          "id": 305,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 267,
+                          "referencedDeclaration": 294,
                           "src": "371:4:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                            "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                             "typeString": "struct StackLib.Stack storage pointer"
                           }
                         },
-                        "id": 279,
+                        "id": 306,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "size",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 339,
+                        "referencedDeclaration": 366,
                         "src": "371:9:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                           "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                         }
                       },
-                      "id": 280,
+                      "id": 307,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1755,7 +1755,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "30",
-                      "id": 281,
+                      "id": 308,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1777,13 +1777,13 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 293,
+                  "id": 320,
                   "nodeType": "IfStatement",
                   "src": "367:63:2",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 291,
+                      "id": 318,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1798,39 +1798,39 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 283,
+                            "id": 310,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 267,
+                            "referencedDeclaration": 294,
                             "src": "402:4:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                              "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                               "typeString": "struct StackLib.Stack storage pointer"
                             }
                           },
-                          "id": 284,
+                          "id": 311,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_items",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 246,
+                          "referencedDeclaration": 273,
                           "src": "402:11:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_address_$dyn_storage",
                             "typeString": "address[] storage ref"
                           }
                         },
-                        "id": 290,
+                        "id": 317,
                         "indexExpression": {
                           "argumentTypes": null,
                           "commonType": {
                             "typeIdentifier": "t_uint8",
                             "typeString": "uint8"
                           },
-                          "id": 289,
+                          "id": 316,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1842,32 +1842,32 @@
                               "argumentTypes": [],
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 285,
+                                "id": 312,
                                 "name": "self",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 267,
+                                "referencedDeclaration": 294,
                                 "src": "414:4:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                                  "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                                   "typeString": "struct StackLib.Stack storage pointer"
                                 }
                               },
-                              "id": 286,
+                              "id": 313,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "size",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 339,
+                              "referencedDeclaration": 366,
                               "src": "414:9:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                                 "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                               }
                             },
-                            "id": 287,
+                            "id": 314,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1886,7 +1886,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "31",
-                            "id": 288,
+                            "id": 315,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1923,7 +1923,7 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 292,
+                    "id": 319,
                     "nodeType": "ExpressionStatement",
                     "src": "395:35:2"
                   }
@@ -1931,26 +1931,26 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 294,
+                    "id": 321,
                     "name": "element",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 273,
+                    "referencedDeclaration": 300,
                     "src": "446:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 271,
-                  "id": 295,
+                  "functionReturnParameters": 298,
+                  "id": 322,
                   "nodeType": "Return",
                   "src": "439:14:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 297,
+            "id": 324,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1958,31 +1958,31 @@
             "name": "popElement",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 268,
+              "id": 295,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 267,
+                  "id": 294,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 297,
+                  "scope": 324,
                   "src": "275:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 266,
+                    "id": 293,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "275:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -1994,15 +1994,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 271,
+              "id": 298,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 270,
+                  "id": 297,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 297,
+                  "scope": 324,
                   "src": "313:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2011,7 +2011,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 269,
+                    "id": 296,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "313:7:2",
@@ -2026,7 +2026,7 @@
               ],
               "src": "312:9:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "255:204:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2034,7 +2034,7 @@
           },
           {
             "body": {
-              "id": 326,
+              "id": 353,
               "nodeType": "Block",
               "src": "526:120:2",
               "statements": [
@@ -2043,10 +2043,10 @@
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 305,
+                      "id": 332,
                       "name": "value",
                       "nodeType": "VariableDeclaration",
-                      "scope": 327,
+                      "scope": 354,
                       "src": "533:13:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -2055,7 +2055,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 304,
+                        "id": 331,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "533:7:2",
@@ -2068,7 +2068,7 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 306,
+                  "id": 333,
                   "initialValue": null,
                   "nodeType": "VariableDeclarationStatement",
                   "src": "533:13:2"
@@ -2080,7 +2080,7 @@
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
                     },
-                    "id": 311,
+                    "id": 338,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2092,32 +2092,32 @@
                         "argumentTypes": [],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 307,
+                          "id": 334,
                           "name": "self",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 299,
+                          "referencedDeclaration": 326,
                           "src": "559:4:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                            "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                             "typeString": "struct StackLib.Stack storage pointer"
                           }
                         },
-                        "id": 308,
+                        "id": 335,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "size",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 339,
+                        "referencedDeclaration": 366,
                         "src": "559:9:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                           "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                         }
                       },
-                      "id": 309,
+                      "id": 336,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2136,7 +2136,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "30",
-                      "id": 310,
+                      "id": 337,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2158,24 +2158,24 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 323,
+                  "id": 350,
                   "nodeType": "IfStatement",
                   "src": "555:64:2",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 321,
+                      "id": 348,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 312,
+                        "id": 339,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 305,
+                        "referencedDeclaration": 332,
                         "src": "583:5:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2190,39 +2190,39 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 313,
+                            "id": 340,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 326,
                             "src": "591:4:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                              "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                               "typeString": "struct StackLib.Stack storage pointer"
                             }
                           },
-                          "id": 314,
+                          "id": 341,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "_items",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 246,
+                          "referencedDeclaration": 273,
                           "src": "591:11:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_address_$dyn_storage",
                             "typeString": "address[] storage ref"
                           }
                         },
-                        "id": 320,
+                        "id": 347,
                         "indexExpression": {
                           "argumentTypes": null,
                           "commonType": {
                             "typeIdentifier": "t_uint8",
                             "typeString": "uint8"
                           },
-                          "id": 319,
+                          "id": 346,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2234,32 +2234,32 @@
                               "argumentTypes": [],
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 315,
+                                "id": 342,
                                 "name": "self",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 299,
+                                "referencedDeclaration": 326,
                                 "src": "603:4:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                                  "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                                   "typeString": "struct StackLib.Stack storage pointer"
                                 }
                               },
-                              "id": 316,
+                              "id": 343,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "size",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 339,
+                              "referencedDeclaration": 366,
                               "src": "603:9:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                                 "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                               }
                             },
-                            "id": 317,
+                            "id": 344,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2278,7 +2278,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "31",
-                            "id": 318,
+                            "id": 345,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2316,7 +2316,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 322,
+                    "id": 349,
                     "nodeType": "ExpressionStatement",
                     "src": "583:36:2"
                   }
@@ -2324,26 +2324,26 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 324,
+                    "id": 351,
                     "name": "value",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 305,
+                    "referencedDeclaration": 332,
                     "src": "635:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 303,
-                  "id": 325,
+                  "functionReturnParameters": 330,
+                  "id": 352,
                   "nodeType": "Return",
                   "src": "628:12:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 327,
+            "id": 354,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2351,31 +2351,31 @@
             "name": "peek",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 300,
+              "id": 327,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 299,
+                  "id": 326,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 327,
+                  "scope": 354,
                   "src": "479:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 298,
+                    "id": 325,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "479:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -2387,15 +2387,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 303,
+              "id": 330,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 302,
+                  "id": 329,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 327,
+                  "scope": 354,
                   "src": "517:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2404,7 +2404,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 301,
+                    "id": 328,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "517:7:2",
@@ -2419,7 +2419,7 @@
               ],
               "src": "516:9:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "465:181:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2427,7 +2427,7 @@
           },
           {
             "body": {
-              "id": 338,
+              "id": 365,
               "nodeType": "Block",
               "src": "711:31:2",
               "statements": [
@@ -2439,32 +2439,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 334,
+                        "id": 361,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 329,
+                        "referencedDeclaration": 356,
                         "src": "725:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                          "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                           "typeString": "struct StackLib.Stack storage pointer"
                         }
                       },
-                      "id": 335,
+                      "id": 362,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "size",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 339,
+                      "referencedDeclaration": 366,
                       "src": "725:9:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$247_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$247_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Stack_$274_storage_ptr_$returns$_t_uint8_$bound_to$_t_struct$_Stack_$274_storage_ptr_$",
                         "typeString": "function (struct StackLib.Stack storage pointer) returns (uint8)"
                       }
                     },
-                    "id": 336,
+                    "id": 363,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2478,15 +2478,15 @@
                       "typeString": "uint8"
                     }
                   },
-                  "functionReturnParameters": 333,
-                  "id": 337,
+                  "functionReturnParameters": 360,
+                  "id": 364,
                   "nodeType": "Return",
                   "src": "718:18:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 339,
+            "id": 366,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2494,31 +2494,31 @@
             "name": "size",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 330,
+              "id": 357,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 329,
+                  "id": 356,
                   "name": "self",
                   "nodeType": "VariableDeclaration",
-                  "scope": 339,
+                  "scope": 366,
                   "src": "666:18:2",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                    "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                     "typeString": "struct StackLib.Stack"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 328,
+                    "id": 355,
                     "name": "Stack",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 247,
+                    "referencedDeclaration": 274,
                     "src": "666:5:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Stack_$247_storage_ptr",
+                      "typeIdentifier": "t_struct$_Stack_$274_storage_ptr",
                       "typeString": "struct StackLib.Stack"
                     }
                   },
@@ -2530,15 +2530,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 333,
+              "id": 360,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 332,
+                  "id": 359,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 339,
+                  "scope": 366,
                   "src": "704:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2547,7 +2547,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 331,
+                    "id": 358,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "704:5:2",
@@ -2562,14 +2562,14 @@
               ],
               "src": "703:7:2"
             },
-            "scope": 340,
+            "scope": 367,
             "src": "652:90:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 341,
+        "scope": 368,
         "src": "28:717:2"
       }
     ],
@@ -2581,5 +2581,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-29T02:51:28.524Z"
+  "updatedAt": "2018-09-29T06:23:55.546Z"
 }

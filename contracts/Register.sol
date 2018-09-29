@@ -43,6 +43,14 @@ contract Register {
     function getMySeries(uint index) public view returns (address) {
         return mySeries[index];
     }
+    
+    function getAuthorizedSeriesCount() public view returns (uint) {
+        return authorizedSeries.length;
+    }
+    
+    function getAuthorizedSeries(uint index) public view returns (address) {
+        return authorizedSeries[index];
+    }
 
     // make sure it is from the owner
     function authorize(address seriesAddr) public returns (bool) {
