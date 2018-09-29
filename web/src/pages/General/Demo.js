@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { Row, Col, Card, Button, Input, Select } from 'antd';
+import { Row, Col, Card, Button, Input, Select, List } from 'antd';
 import GridContent from '@/components/PageHeaderWrapper/GridContent';
 import Blank from '@/components/Blank';
 
@@ -28,6 +28,8 @@ class Demo extends Component {
     patientName: 'Lily',
     doctorName: 'Steve',
     seriesName: 'test',
+    queryString: 'SELECT * From Record',
+    selectedSeries: undefined,
   };
 
   componentDidMount() {}
@@ -46,6 +48,14 @@ class Demo extends Component {
     this.setState({ seriesName: e.target.value });
   };
 
+  handleQueryStringChange = e => {
+    this.setState({ queryString: e.target.value });
+  };
+
+  handleSelectedSeriesChange = e => {
+    this.setState({ selectedSeries: e });
+  };
+
   handlePatientRegister = () => {
     this.dispatch({
       type: 'demo/register',
@@ -59,6 +69,13 @@ class Demo extends Component {
 
   handleAddSeries = () => {
     this.dispatch({ type: 'demo/submitSeries', payload: this.state.seriesName });
+  };
+
+  handleAddRecord = () => {
+    this.dispatch({
+      type: 'demo/submitRecord',
+      payload: { query: this.state.queryString, series: this.state.selectedSeries },
+    });
   };
 
   render() {
@@ -75,6 +92,23 @@ class Demo extends Component {
       <Option key={e.address} value={e.address}>
         {e.name}
       </Option>
+    ));
+
+    const mySeriesList = demo.seriesList.map(e => (
+      <div>
+        <List
+          key={e.address}
+          header={
+            <div>
+              <b>{`${e.name} - ${e.address}`}</b>
+            </div>
+          }
+          bordered
+          dataSource={e.records.map(ele => ele.sql)}
+          renderItem={item => <List.Item>{item}</List.Item>}
+        />
+        <Blank height={10} />
+      </div>
     ));
 
     return (
@@ -102,6 +136,9 @@ class Demo extends Component {
                   Submit
                 </Button>
               </InputGroup>
+              <Blank height={20} />
+              <h4>My Series List</h4>
+              {mySeriesList}
             </Card>
           </Col>
           <Col span={12}>
@@ -143,16 +180,22 @@ class Demo extends Component {
 
               <Blank height={20} />
               <h4>Add Record to</h4>
-              <Select style={{ width: '100%' }}>{optionSeries}</Select>
+              <Select
+                style={{ width: '100%' }}
+                value={this.state.selectedSeries}
+                onChange={this.handleSelectedSeriesChange}
+              >
+                {optionSeries}
+              </Select>
               <Blank height={10} />
               <InputGroup compact>
                 <Input
-                  addonBefore="Query Strinng"
+                  addonBefore="Query String"
                   style={{ width: '80%' }}
-                  defaultValue="SELECT * FROM Record"
-                  onChange={this.handleSeriesNameChange}
+                  defaultValue={this.state.queryString}
+                  onChange={this.handleQueryStringChange}
                 />
-                <Button style={{ width: '20%' }} type="primary" onClick={this.handleAddSeries}>
+                <Button style={{ width: '20%' }} type="primary" onClick={this.handleAddRecord}>
                   Submit
                 </Button>
               </InputGroup>

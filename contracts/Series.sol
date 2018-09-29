@@ -4,9 +4,6 @@ import './Register.sol';
 
 contract Series {
     struct Record {
-        string featureName;
-        string featureValue;
-        uint256 datetime;
         string sql;
     }
     
@@ -14,7 +11,7 @@ contract Series {
     address public owner;
     address public provider;
     string private sql;
-    Record[] public records;
+    Record[] private records;
 
     constructor(address ownerAddr, string mname, address mprovider, string query) public {
         Register(ownerAddr).addMySeries();
@@ -28,8 +25,16 @@ contract Series {
         return sql;
     }
 
-    function addRecord(string featureName, string featureValue, uint256 datetime, string msql) public {
-        Record memory record = Record(featureName, featureValue, datetime, msql);
+    function addRecord(string msql) public {
+        Record memory record = Record(msql);
         records.push(record);
+    }
+    
+    function getRecordCount() public view returns (uint) {
+        return records.length;
+    }
+    
+    function getRecord(uint index) public view returns (string) {
+        return records[index].sql;
     }
 }
