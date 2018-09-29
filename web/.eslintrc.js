@@ -27,6 +27,7 @@ module.exports = {
 
     'linebreak-style': 0,
     'react/destructuring-assignment': 0,
+    'no-await-in-loop': 0,
   },
   settings: {
     polyfills: ['fetch', 'promises', 'url'],
