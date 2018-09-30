@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Card, Button, Input, List } from 'antd';
+import { Card, Button, Input, List, Col, Row, Select } from 'antd';
 import Blank from '@/components/Blank';
 
+const { Option } = Select;
 const InputGroup = Input.Group;
 
 class Patient extends Component {
@@ -9,6 +10,7 @@ class Patient extends Component {
     super(props);
     this.state = {
       patientName: 'Lily',
+      target: undefined,
     };
   }
 
@@ -23,18 +25,51 @@ class Patient extends Component {
     });
   };
 
+  handleTargetChange = e => {
+    this.setState({ target: e });
+  };
+
+  handleAuthorize = series => {
+    this.props.dispatch({
+      type: 'demo/authorize',
+      payload: { source: series, target: this.state.target },
+    });
+  };
+
   render() {
     const { demo } = this.props;
 
+    const doctorOption = demo.doctorList.map(e => (
+      <Option value={e.entity.address}>{e.name}</Option>
+    ));
+
     const mySeriesList = demo.seriesList.map(e => (
-      <div>
+      <div key={e.address}>
         <List
-          key={e.address}
+          // key={e.address}
           header={
-            <div>
-              <b>{`${e.name} - ${e.address}`}</b>
-            </div>
+            <Row>
+              <Col span={8}>
+                <b>{`${e.name}`}</b>
+              </Col>
+              <Col span={16}>
+                <InputGroup compact size="small">
+                  <Select size="small" style={{ width: '70%' }} onChange={this.handleTargetChange}>
+                    {doctorOption}
+                  </Select>
+                  <Button
+                    style={{ width: '30%' }}
+                    type="primary"
+                    size="small"
+                    onClick={() => this.handleAuthorize(e.address)}
+                  >
+                    Authorize
+                  </Button>
+                </InputGroup>
+              </Col>
+            </Row>
           }
+          footer={<b>{`${e.address}`}</b>}
           bordered
           dataSource={e.records.map(ele => ele.sql)}
           renderItem={item => <List.Item>{item}</List.Item>}

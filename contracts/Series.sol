@@ -38,4 +38,8 @@ contract Series {
     function getRecord(uint index) public view returns (string) {
         return records[index].sql;
     }
+    
+    function authorizeTo(address target) public {
+        Register(target).addAuthorizedSeries();
+    }
 }

@@ -43,6 +43,7 @@ export default {
     patient: undefined,
     patientName: undefined,
     seriesList: [],
+    doctorList: [],
     doctor: undefined,
     docAuthorizedList: [],
     externalDoctor: undefined,
@@ -62,9 +63,18 @@ export default {
         yield put({ type: 'setPatientName', payload: patientname });
       } else if (payload.category === 1) {
         yield put({ type: 'setDoctor', payload: entity });
+        const name = yield entity.getName();
+        yield put({ type: 'addToDoctorList', payload: { entity, name } });
       } else if (payload.category === 1.1) {
         yield put({ type: 'setExternalDoctor', payload: entity });
+        const name = yield entity.getName();
+        yield put({ type: 'addToDoctorList', payload: { entity, name } });
       }
+    },
+    *authorize({ payload }, { put }) {
+      const series = yield Series.at(payload.source);
+      yield series.authorizeTo(payload.target, { from: accounts[0] });
+      yield put({ type: 'updateLists' });
     },
     *submitSeries({ payload }, { put, select }) {
       const patient = yield select(state => state.demo.patient);
@@ -100,13 +110,17 @@ export default {
     },
     *updateDocAuthorizedList(_, { put, select }) {
       const doctor = yield select(state => state.demo.doctor);
-      const seriesList = yield getAuthorizedSeriesList(doctor.address);
-      yield put({ type: 'setDocAuthorizedList', payload: seriesList });
+      if (doctor) {
+        const seriesList = yield getAuthorizedSeriesList(doctor.address);
+        yield put({ type: 'setDocAuthorizedList', payload: seriesList });
+      }
     },
     *updateExternalDocAuthorizedList(_, { put, select }) {
       const doctor = yield select(state => state.demo.externalDoctor);
-      const seriesList = yield getAuthorizedSeriesList(doctor.address);
-      yield put({ type: 'setExternalDocAuthorizedList', payload: seriesList });
+      if (doctor) {
+        const seriesList = yield getAuthorizedSeriesList(doctor.address);
+        yield put({ type: 'setExternalDocAuthorizedList', payload: seriesList });
+      }
     },
   },
 
@@ -127,6 +141,12 @@ export default {
       return {
         ...state,
         seriesList: payload,
+      };
+    },
+    addToDoctorList(state, { payload }) {
+      return {
+        ...state,
+        doctorList: [...state.doctorList, payload],
       };
     },
     setDoctor(state, { payload }) {
